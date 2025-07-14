@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BYTECORE - Acceso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container py-5">
+  <div class="auth-container">
+    <div class="logo-section">
+      <h1>BYTECORE</h1>
+      <p>Sistema de Gestión Técnica</p>
+    </div>
+
+    <!-- Formulario de Login -->
+    <div id="loginSection">
+      <h2 class="text-center mb-4 text-white">INICIAR SESIÓN</h2>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="loginEmail" class="form-label">CORREO ELECTRÓNICO</label>
+          <input type="email" id="loginEmail" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label">CONTRASEÑA</label>
+          <input type="password" id="loginPassword" class="form-control" required />
+        </div>
+        <button type="submit" id="loginBtn" class="btn btn-primary w-100 mb-3">
+          <span id="loginBtnText">INICIAR SESIÓN</span>
+          <span id="loginSpinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
+        </button>
+      </form>
+      
+      <div class="text-center">
+        <p class="register">¿No tienes cuenta?</p>
+        <button type="button" id="showRegister" class="btn btn-secondary">REGISTRARSE</button>
+      </div>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div id="registerSection" class="d-none">
+      <h2 class="text-center mb-4 text-white">REGISTRO</h2>
+      <form id="registerForm">
+        <div class="mb-3">
+          <label for="registerEmail" class="form-label">CORREO ELECTRÓNICO</label>
+          <input type="email" id="registerEmail" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="registerPassword" class="form-label">CONTRASEÑA</label>
+          <input type="password" id="registerPassword" class="form-control" required 
+                 minlength="6" placeholder="Mínimo 6 caracteres"/>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">CONFIRMAR CONTRASEÑA</label>
+          <input type="password" id="confirmPassword" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="registerName" class="form-label">NOMBRE COMPLETO</label>
+          <input type="text" id="registerName" class="form-control" required />
+        </div>
+        <button type="submit" id="registerBtn" class="btn btn-primary w-100 mb-3">
+          <span id="registerBtnText">REGISTRARSE</span>
+          <span id="registerSpinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
+        </button>
+      </form>
+      
+      <div class="text-center">
+        <p class="register">¿Ya tienes cuenta?</p>
+        <button type="button" id="showLogin" class="btn btn-secondary">INICIAR SESIÓN</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="error" class="alert alert-danger text-center mt-3 d-none"></div>
+  <div id="success" class="alert alert-success text-center mt-3 d-none"></div>
+  
+  <script src="js/auth.js"></script>
+</body>
+</html>
